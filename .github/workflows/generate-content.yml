@@ -1,0 +1,39 @@
+name: Generate Content Data
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'content/**'
+      - 'uploads/**'
+  workflow_dispatch:
+
+jobs:
+  generate-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies
+        run: |
+          npm install gray-matter
+          
+      - name: Generate content data
+        run: |
+          node .github/scripts/generate-data.js
+          
+      - name: Commit changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add content-data.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "Auto-generate content data [skip ci]"
+          git push
