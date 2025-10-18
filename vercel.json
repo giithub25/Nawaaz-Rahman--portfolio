@@ -1,0 +1,11 @@
+{
+  "routes": [
+    {
+      "src": "/admin/config.yml",
+      "dest": "/admin/config.yml",
+      "headers": {
+        "Content-Type": "text/yaml"
+      }
+    }
+  ]
+}
