@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  repo: github25/Nawaaz-Rahman--portfolio
+  repo: giithub25/Nawaaz-Rahman--portfolio
   branch: main
 
 media_folder: "uploads"
