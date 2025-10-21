@@ -1,11 +1,17 @@
 {
-  "routes": [
+  "headers": [
     {
-      "src": "/admin/config.yml",
-      "dest": "/admin/config.yml",
-      "headers": {
-        "Content-Type": "text/yaml"
-      }
+      "source": "/admin/config.yml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/yaml"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
     }
   ]
 }
