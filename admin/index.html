@@ -1,39 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Content Manager</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Content Manager</title>
 </head>
 <body>
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-    <script>
-        CMS.init({
-            config: {
-                backend: {
-                    name: 'github',
-                    repo: 'giithub25/Nawaaz-Rahman--portfolio',
-                    branch: 'main',
-                    base_url: 'https://nawaaz-rahman-portfolio.vercel.app',
-                    auth_endpoint: '/api/auth'
-                },
-                media_folder: 'uploads',
-                public_folder: '/uploads',
-                collections: [
-                    {
-                        name: 'certificates',
-                        label: 'Certificates',
-                        folder: 'content/certificates',
-                        create: true,
-                        fields: [
-                            { label: 'Title', name: 'title', widget: 'string' },
-                            { label: 'File', name: 'file', widget: 'file' },
-                            { label: 'Caption', name: 'caption', widget: 'markdown', required: false }
-                        ]
-                    }
-                ]
-            }
-        });
-    </script>
+  <script src="https://unpkg.com/decap-cms@^3.1.0/dist/decap-cms.js"></script>
 </body>
 </html>
