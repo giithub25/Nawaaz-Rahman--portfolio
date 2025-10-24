@@ -1,6 +1,6 @@
 ---
 title: Test Certificate
-file: /uploads/certificates/certificate-of-digital-marketing.-jpg.jpg
+file: "/uploads/certificates/digital-marketing-certificate.jpg"
 caption: This is a test
 order: 0
 ---
