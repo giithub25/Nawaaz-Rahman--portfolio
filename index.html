@@ -2109,7 +2109,7 @@
         // Load certificates from CMS
         async function loadCertificates() {
             try {
-                const response = await fetch('/api/certificates.json');
+                const response = await fetch('/content-data.json');
                 if (response.ok) {
                     certificatesData = await response.json();
                     if (certificatesData && certificatesData.length > 0) {
@@ -2147,7 +2147,7 @@
         // Load portfolio folders from CMS
         async function loadPortfolioFolder(folderName) {
             try {
-                const response = await fetch(`/api/portfolio/${folderName}.json`);
+                const response = await fetch(`/content-data.json${folderName}.json`);
                 if (response.ok) {
                     portfolioData[folderName] = await response.json();
                     if (portfolioData[folderName] && portfolioData[folderName].length > 0) {
@@ -2323,4 +2323,5 @@
 </body>
 
 </html>
+
 
