@@ -2111,7 +2111,8 @@
             try {
                 const response = await fetch('/content-data.json');
                 if (response.ok) {
-                    certificatesData = await response.json();
+                    const data = await response.json();
+                    certificatesData = data.certificates;
                     if (certificatesData && certificatesData.length > 0) {
                         document.getElementById('certificatesPortal').style.display = 'none';
                         document.getElementById('certificatesGrid').classList.remove('hidden');
@@ -2147,9 +2148,10 @@
         // Load portfolio folders from CMS
         async function loadPortfolioFolder(folderName) {
             try {
-                const response = await fetch(`/content-data.json${folderName}.json`);
+                const response = await fetch(`/content/${folderName}.json`);
                 if (response.ok) {
-                    portfolioData[folderName] = await response.json();
+                    const data = await response.json();
+                    portfolioData[folderName] = data.files;
                     if (portfolioData[folderName] && portfolioData[folderName].length > 0) {
                         const portalBox = document.querySelector(`[data-folder="${folderName}"]`);
                         const filesGrid = document.querySelector(`.files-grid[data-folder="${folderName}"]`);
@@ -2323,5 +2325,6 @@
 </body>
 
 </html>
+
 
 
