@@ -1559,7 +1559,7 @@
             .icon-link { width: 85px; height: 85px; }
         }
     </style>
-    
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
     <!-- FIXED HEADER WITH MENU -->
@@ -2319,108 +2319,8 @@
         // AUTO-DETECT SECTION FROM NAVIGATION
         // Removed intersection observer - not needed for scroll style
     </script>
-    
-    // ============================================
-// CMS DATA LOADING - ADDED BY CLAUDE
-// ============================================
-
-let contentData = null;
-
-async function loadContentData() {
-    try {
-        const response = await fetch('/content-data.json');
-        if (!response.ok) throw new Error('Data not found');
-        contentData = await response.json();
-        
-        displayCertificates();
-        displayPortfolioFiles('prompt-engineering');
-        displayPortfolioFiles('content-writing');
-        displayPortfolioFiles('image-generation');
-        displayPortfolioFiles('video-generation');
-        displayPortfolioFiles('ai-automations');
-    } catch (error) {
-        console.log('No CMS data yet - showing upload portals');
-    }
-}
-
-function displayCertificates() {
-    const portalBox = document.getElementById('certificatesPortal');
-    const filesGrid = document.getElementById('certificatesGrid');
-    
-    if (!contentData || !contentData.certificates || contentData.certificates.length === 0) {
-        if (portalBox) portalBox.style.display = 'flex';
-        if (filesGrid) filesGrid.classList.add('hidden');
-        return;
-    }
-    
-    if (portalBox) portalBox.style.display = 'none';
-    if (filesGrid) filesGrid.classList.remove('hidden');
-    
-    filesGrid.innerHTML = contentData.certificates.map((cert, index) => {
-        const fileExt = cert.file.split('.').pop().toLowerCase();
-        const isImage = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg'].includes(fileExt);
-        
-        return `
-            <div class="file-card" onclick="openLightbox(${index}, 'certificates')">
-                <div class="file-thumbnail">
-                    ${isImage 
-                        ? `<img src="${cert.file}" alt="${cert.title}" loading="lazy">` 
-                        : `<div class="file-icon">📄</div>`
-                    }
-                </div>
-                <div class="file-title">${cert.title}</div>
-            </div>
-        `;
-    }).join('');
-    
-    window.certificatesLightboxData = contentData.certificates;
-}
-
-function displayPortfolioFiles(folderName) {
-    const folder = contentData?.portfolio?.[folderName] || [];
-    const portalBox = document.querySelector(`.portal-box[data-folder="${folderName}"]`);
-    const filesGrid = document.querySelector(`.files-grid[data-folder="${folderName}"]`);
-    
-    if (folder.length === 0) {
-        if (portalBox) portalBox.style.display = 'flex';
-        if (filesGrid) filesGrid.classList.add('hidden');
-        return;
-    }
-    
-    if (portalBox) portalBox.style.display = 'none';
-    if (filesGrid) filesGrid.classList.remove('hidden');
-    
-    if (filesGrid) {
-        filesGrid.innerHTML = folder.map((file, index) => {
-            const fileExt = file.file.split('.').pop().toLowerCase();
-            const isImage = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg'].includes(fileExt);
-            
-            return `
-                <div class="file-card" onclick="openLightbox(${index}, '${folderName}')">
-                    <div class="file-thumbnail">
-                        ${isImage 
-                            ? `<img src="${file.file}" alt="${file.title}" loading="lazy">` 
-                            : `<div class="file-icon">📄</div>`
-                        }
-                    </div>
-                    <div class="file-title">${file.title}</div>
-                </div>
-            `;
-        }).join('');
-    }
-    
-    window[`portfolio_${folderName}_lightboxData`] = folder;
-}
-
-window.addEventListener('load', loadContentData);
-
-// ============================================
-// END CMS DATA LOADING
-// ============================================
-</script>
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script src="cms-data.js"></script>
 </body>
+
 </html>
-
-
 
