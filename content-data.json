@@ -2,19 +2,40 @@
   "certificates": [
     {
       "title": "All of AI: ChatGPT, Midjourney, Stable Diffusion & App Development",
-      "file": "/uploads/certificates/all-of-ai-arnold-oberleiter.png"
+      "file": "/uploads/certificates/all-of-ai-arnold-oberleiter.png",
+      "caption": "I completed the Udemy course “All of AI: ChatGPT, Midjourney, Stable Diffusion & App Development” led by Arnold Oberleitner. Over 37.5 hours of structured learning, I gained practical experience with generative AI tools, including prompt design, image creation, and application development. The course combined technical guidance with creative practice, showing how to apply these platforms in real projects. This achievement reflects my ability to integrate multiple AI technologies into workflows, strengthen my creative problem‑solving, and expand my expertise in building solutions that connect design, automation, and innovation.",
+      "order": 0
     },
     {
       "title": "Certified in Practical Digital Marketing (Level 1 & 2)",
-      "file": "/uploads/certificates/certificate-of-digital-marketing.png"
+      "file": "/uploads/certificates/certificate-of-digital-marketing.jpg",
+      "caption": "I completed the Advanced Digital Marketing course (Level 1 & 2) from FUTURE IT & Language Training Institute, focusing on practical skills for online campaigns, audience targeting, and platform management. The training was hands-on and covered tools like SEO, social media strategy, and analytics. I earned this certificate after fulfilling all course requirements and being assessed as competent. Issued on 24 April 2025, it reflects my ability to plan and execute digital marketing strategies with real-world impact. This experience strengthened my foundation in digital communication and added measurable value to my professional skill set.",
+      "order": 0
     },
     {
       "title": "Mastering AI Communication: Prompt Engineering Professional Certification",
-      "file": "/uploads/certificates/pro-rtificate-certiprof.jpg"
+      "file": "/uploads/certificates/prompt-engineering-certificate.jpg",
+      "caption": "I am delighted to share that I've successfully achieved the Prompt Engineering Professional Certification (CPEFPC™) from CertiProf®. This certification confirms my expertise in navigating the complexities of large language models. I specialize in designing and refining highly effective prompts that cut through noise, ensuring reliable, targeted, and high-quality outputs. This isn't just about using AI; it's about mastering the communication framework to maximize its potential. I am now better equipped to integrate intelligent, high-impact AI solutions into professional projects, enhancing efficiency and driving innovation across all workflows. This skill is key to the future of practical AI application.",
+      "order": 0
     },
     {
-      "title": "AI-Assisted Creative Writing",
-      "file": "/uploads/certificates/chatgpt-for-creative-writing-content-creation.png"
+      "title": "AI‑Assisted Creative Writing",
+      "file": "/uploads/certificates/chatgpt-for-creative-writing-content-creation.png",
+      "caption": "I completed the Udemy course “Creative Writing Using ChatGPT,” offered by ExpertEase Education. This short program introduced me to new ways of approaching writing with the support of AI. I practiced generating ideas, shaping narratives, and refining drafts while keeping my own voice at the center of the process. The course showed me how AI can act as a partner in creativity, helping to overcome blocks and spark fresh directions without replacing the human touch. This certificate reflects my interest in exploring how technology can support storytelling and communication, and how creative work can evolve with the right tools.",
+      "order": 0
+    },
+    {
+      "title": "No‑Code AI Agent Builder",
+      "file": "/uploads/certificates/n8n-course-no-code-ai-agent-builder.jpg",
+      "caption": "I completed the “n8n Course: No Code AI Agent Builder” from Simplilearn SkillUp, which introduced me to building AI-powered workflows without writing code. The course focused on using n8n to automate tasks, connect APIs, and create intelligent agents through visual logic. I learned how to design modular flows that respond to inputs, trigger actions, and integrate with external services—all within a no-code environment. This certificate reflects my ability to build functional AI systems using accessible tools, and my interest in simplifying complex processes through automation and design thinking.",
+      "order": 0
     }
-  ]
+  ],
+  "portfolio": {
+    "prompt-engineering": [],
+    "content-writing": [],
+    "image-generation": [],
+    "video-generation": [],
+    "ai-automations": []
+  }
 }
