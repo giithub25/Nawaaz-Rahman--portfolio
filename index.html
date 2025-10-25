@@ -2107,7 +2107,8 @@
         };
 
         // Load certificates from CMS
-        async function loadCertificates() {
+        // Load certificates from JSON
+async function loadCertificates() {
     try {
         const response = await fetch('/content-data.json');
         if (response.ok) {
@@ -2348,6 +2349,7 @@ async function loadPortfolioFolder(folderName) {
 </body>
 
 </html>
+
 
 
 
